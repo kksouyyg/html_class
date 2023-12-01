@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        main, section, div{
+            border: 1px solid black;
+            margin: 20px;
+            padding: 30px;
+        }
+        main{
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: antiquewhite;
+        }
+        section{
+            background-color: gold;
+        }
+        div{
+            background-color: cadetblue;
+        }
+        .relative{
+            position: relative;
+            /* relative만 주면 변화가 없다. */
+
+            top: -40px;
+            left: 200px;
+        }
+        .absolute{
+            position: absolute;
+            margin: 0;
+            top:0;
+            right: 0;
+        }
+        main{
+            position: relative;
+            height: 20000px;
+        }
+        .fixed{
+            position: fixed;
+            top:0;
+            left:0;
+            margin:0;
+            width: 100%;
+            z-index: 2;
+        }
+        
+
+        .sticky{
+            position: sticky; 
+            bottom :300px; /* 잘 안되넹? */
+            /*
+            주의 사항 : 부모 요소에 높이 값이 있어야 작동한다.
+            */
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        main
+        <section>
+            section
+            <!-- 모든 요소의 position속성 기본값이 static이다! -->
+            <div>static</div>
+            <div class="relative">relative</div>
+            <div class="absolute">absolute</div>
+            <div class="fixed">fixed</div>
+        
+        </section>
+        <div class="sticky">sticky</div>
+    </main>
+</body>
+</html>
